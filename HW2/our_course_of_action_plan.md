@@ -16,7 +16,9 @@
     - [ ] first estimate order of magnitude for the change of response
 
 ### Then, tasks for all (feel free to check them off as you finish them)
-<!-- - [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported -->
+<!-- 
+	- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported 
+-->
 - [ ] Perform random-poke.py on these instances and investigate the distribution of latency times for different size arrays.
 - [ ] Compare: t3, t3a (2 populations, explanatory variable) → expect different performance (latency)
 
@@ -25,11 +27,12 @@
 - [ ] Condense/crystalize all results into a briefest Jupyter notebook (graphs returned by graphing functions if they're complicated)
 
 <!-- ### TODO: tasks for tim ###
-## - [ ] TODO: add table of contents
+## - [ ] TODO: add table of contents to .md file
 ## - [ ] TODO: add flow chart of workflows?
 ## - [ ] TODO: turn this md into a template for next time and automate it's admin
 ## - [ ] TODO: add links to md file google sheet and from task list
 ## - [x] TODO: ask team if they have any good file stamping options
+## - [ ] TODO: ask morgan and jake if they want to join starting HW3
 -->
 
 ## Summary of experimental design
