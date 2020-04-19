@@ -1,4 +1,5 @@
-git clone https://github.com/yoavfreund/Public-DSC291.git
+git clone https://github.com/timtyree/dsc291team4.git
+# git clone https://github.com/yoavfreund/Public-DSC291.git
 sudo pip install psutil
 
 # run the following if the instance has an SSD that needs to be formatted and mounted.
