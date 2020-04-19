@@ -4,6 +4,7 @@
 Created on Thu Mar 26 10:51:51 2020
 
 @author: yoavfreund
+#adapted by Team 4 for HW2 of DSC291
 """
 import subprocess
 from time import sleep
