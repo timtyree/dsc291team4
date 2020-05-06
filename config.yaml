@@ -1,0 +1,11 @@
+credentials:
+  path: ~/Vault/creds.yaml
+emr:
+  instance-type: r4.2xlarge
+  name: team4-cluster
+  region: us-west-2
+  spot-price: 1.0
+  worker-count: 1
+  open-firewall: false
+jupyter:
+  password: correct-horse-battery
