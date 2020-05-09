@@ -1,5 +1,5 @@
 credentials:
-  path: /Users/timothytyree/Vault/creds.yaml
+  path: ~/Vault/creds.yaml
 emr:
   instance-type: r4.2xlarge
   name: team4-cluster
@@ -8,4 +8,4 @@ emr:
   worker-count: 1
   open-firewall: false
 jupyter:
-  password: correcthorsebattery
+  password: correct-horse-battery
