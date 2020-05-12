@@ -1,4 +1,9 @@
 *.rbc
 *.fyc
 *.pyc
-HW2/.DS_Store
+*.DS_Store
+HW3/Data/south_plains_snow_data_large.csv
+HW3/Data/north_plains_snow_means_data.csv
+*-checkpoint.ipynb
+HW3/.ipynb_checkpoints/HW3_Preliminary-checkpoint.ipynb
+HW3/.ipynb_checkpoints/HW3_Preliminary-checkpoint.ipynb
