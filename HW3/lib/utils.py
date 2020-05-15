@@ -19,8 +19,10 @@ from matplotlib.colors import rgb2hex
 from matplotlib.pyplot import xticks, yticks, figure
 import pylab as plt
 
+from ipyleaflet import Heatmap, WidgetControl, FullScreenControl
+from ipywidgets import IntSlider, jslink
 
-class leaflet:
+class leaflet_old:
     """
     Plots circles on a map (one per station) whose size is proportional to the number of feature measurements, and whose color is equal to their aggregated value (min, max, avg)  
     
@@ -42,7 +44,7 @@ class leaflet:
         self.maxAggVal = None
         
         
-        self.cmap = plt.get_cmap('jet') 
+        self.cmap = plt.get_cmap('jet_r')
         self.m = None
         
     def add(self, dataframe):
@@ -50,7 +52,7 @@ class leaflet:
         Adds (or concatenates) a dataframe to the instance's master dataframe. The dataframe to be added must have atleast
         the following columns: station, latitude, longitude, featureStr, value
         """
-
+        
         self.sqlctxt.registerDataFrameAsTable(dataframe, "temp")
         query = f"""
         SELECT Station, latitude, longitude, COUNT(Measurement), MEAN(Values)
@@ -102,6 +104,7 @@ class leaflet:
     def color_legend(self):
         self.cfig = figure(figsize=[10,1])
         ax = plt.subplot(111)
+#         vals = self.cmap(np.arange(0,1,.005))[:,:3]
         vals = self.cmap(np.arange(0,1,.005))[:,:3]
         vals3 = np.stack([vals]*10)
         vals3.shape
@@ -114,6 +117,227 @@ class leaflet:
         x = (val - self.minAggVal)/(self.maxAggVal - self.minAggVal)
         return(rgb2hex(self.cmap(x)[:3]))
 
+class leaflet:
+    """
+    Plots circles on a map (one per station) whose size is proportional to the number of feature measurements, and whose color is equal to their aggregated value (min, max, avg)  
+    
+    :param featureStr: the feature you'd like to visualize given as a string, eg. 'SNWD'
+    :param aggregateType: 'avg', 'min', 'max'
+    """
+    
+    def __init__(self, sqlctxt, featureStr):
+        self.feat = featureStr
+        self.pdfMaster = None
+        self.sqlctxt = sqlctxt
+        
+        self.maxLong = None
+        self.minLong = None
+        self.maxLat = None
+        self.minLat = None
+        
+        self.minAggVal = None
+        self.maxAggVal = None
+        
+        
+        self.cmap = plt.get_cmap('jet')
+        self.m = None
+        
+    def add(self, dataframe):
+        """
+        Adds (or concatenates) a dataframe to the instance's master dataframe. The dataframe to be added must have atleast
+        the following columns: station, latitude, longitude, featureStr, value
+        """
+        
+        self.sqlctxt.registerDataFrameAsTable(dataframe, "temp")
+        query = f"""
+        SELECT Station, latitude, longitude, NumMeas, MEAN(Values)
+        FROM temp
+        GROUP BY Station, latitude, longitude, NumMeas
+        """
+        tempdf = self.sqlctxt.sql(query).toPandas()
+        
+        if (self.pdfMaster is None):
+            # set as new pdfMaster
+            self.pdfMaster = tempdf
+            
+        else:            
+            # append to existing dfMaster
+            self.pdfMaster = pd.concat([self.pdfMaster, tempdf])
+            
+    def plot_all(self):
+        # update internals
+        self.maxLong = self.pdfMaster['longitude'].max()
+        self.minLong = self.pdfMaster['longitude'].min()
+        self.maxLat = self.pdfMaster['latitude'].max()
+        self.minLat = self.pdfMaster['latitude'].min()
+        self.minAggVal = self.pdfMaster['avg(Values)'].min()
+        self.maxAggVal = self.pdfMaster['avg(Values)'].max()
+        
+        # update center of map
+        self.center = [(self.minLat + self.maxLat)/2, (self.minLong + self.maxLong)/2]
+        self.zoom = 6
+        self.m = Map(default_tiles=TileLayer(opacity=1.0), center=self.center, zoom=self.zoom)
+        
+        # loop over all the points in given dataframe, adding them to self.map
+        circles = []
+        for index,row in self.pdfMaster.iterrows():
+            _lat=row['latitude']
+            _long=row['longitude']
+            _count=row['NumMeas']
+            _coef=row['avg(Values)']
+            # taking sqrt of count so that the  area of the circle corresponds to the count
+            c = Circle(location=(_lat,_long), radius=int(1200*(_count+0.0)), weight=1,
+                    color='#AAA', opacity=0.8, fill_opacity=0.4,
+                    fill_color=self.get_color(_coef))
+            circles.append(c)
+            self.m.add_layer(c)
+        self.m
+    
+    def heatmap(self):
+        # update internals
+        self.maxLong = self.pdfMaster['longitude'].max()
+        self.minLong = self.pdfMaster['longitude'].min()
+        self.maxLat = self.pdfMaster['latitude'].max()
+        self.minLat = self.pdfMaster['latitude'].min()
+        self.minAggVal = self.pdfMaster['avg(Values)'].min()
+        self.maxAggVal = self.pdfMaster['avg(Values)'].max()
+        
+        # update center of map
+        self.center = [(self.minLat + self.maxLat)/2, (self.minLong + self.maxLong)/2]
+        self.zoom = 4
+        self.m = Map(default_tiles=TileLayer(opacity=1.0), center=self.center, zoom=self.zoom)
+        
+        # 
+        locations = [[self.pdfMaster.iloc[i]['latitude'], self.pdfMaster.iloc[i]['longitude'], (self.pdfMaster.iloc[i]['avg(Values)'])*1000/(self.maxAggVal)] for i in range(len(self.pdfMaster)) if self.pdfMaster.iloc[i]['avg(Values)'] >= 0]
+        hm_hot = Heatmap(locations=locations,
+                     radius=10,
+                     blur=5,
+                     max=.8,
+                     max_zoom=100,
+                     gradient={0.0: 'yellow', .5: 'orange', 1.0: 'red'}
+                    )
+        self.m.add_layer(hm_hot)
+        
+        # 
+        locations = [[self.pdfMaster.iloc[i]['latitude'], self.pdfMaster.iloc[i]['longitude'], (abs(self.pdfMaster.iloc[i]['avg(Values)']))*1000/(abs(self.minAggVal))] for i in range(len(self.pdfMaster)) if self.pdfMaster.iloc[i]['avg(Values)'] <= 0]
+        hm_cold = Heatmap(locations=locations,
+                     radius=10,
+                     blur=5,
+                     max=.8,
+                     max_zoom=100,
+                     gradient={0.0: 'lime', 0.5: 'cyan', 1.0: 'blue'}
+                    )
+        self.m.add_layer(hm_cold)
+        
+        radius_slider = IntSlider(description='Saturation', min=1, max=25, value=12)
+        jslink((radius_slider, 'value'), (hm_hot, 'radius'))
+        jslink((radius_slider, 'value'), (hm_cold, 'radius'))
+        radius_control = WidgetControl(widget=radius_slider, position='topright')
+        self.m.add_control(radius_control)
+        
+        self.m.add_control(FullScreenControl())
+        
+    
+    def color_legend(self):
+        self.cfig = figure(figsize=[10,1])
+        ax = plt.subplot(111)
+#         vals = self.cmap(np.arange(0,1,.005))[:,:3]
+        vals = self.cmap(np.arange(0,1,.005))[:,:3]
+        vals3 = np.stack([vals]*10)
+        vals3.shape
+        ax.imshow(vals3)
+        midpoint = 200. * -self.minAggVal/(self.maxAggVal - self.minAggVal)
+        xticks((0,midpoint,200),["%4.1f"%v for v in (self.minAggVal,0.,self.maxAggVal)])
+        yticks(());
+
+    def get_color(self, val):
+        x = (val - self.minAggVal)/(self.maxAggVal - self.minAggVal)
+        return(rgb2hex(self.cmap(x)[:3]))
+    
+def decadeMeasurementDelta(featureStr, states, data_dir, sqlContext):
+    deltaDFs = []
+    # create the sparksql context
+    for s in states:
+        parquet = s + '.parquet'
+        parquet_path = data_dir + '/' + parquet
+        df = sqlContext.read.parquet(parquet_path)
+        sqlContext.registerDataFrameAsTable(df,f'table_{s}')
+        
+        # 70s
+        
+        ###
+        Query = f"""
+        SELECT Station, Measurement, Values, longitude, latitude, Year
+        FROM table_{s}
+        WHERE Measurement=={featureStr} and (Year >= 1970 and Year < 1980)
+        """
+        query70s = sqlContext.sql(Query)
+        rdd70s = query70s.rdd.map(lambda x: remove0sAndAverage(x, 'Values'))
+        dfs70 = sqlContext.createDataFrame(rdd70s)
+        sqlContext.registerDataFrameAsTable(dfs70, f'table_{s}_70s')
+        
+        ###
+        Query = f"""
+        SELECT Station, COUNT(Measurement) as NumMeas70s, MEAN(Values) as AvgVal70s, longitude, latitude
+        FROM table_{s}_70s
+        GROUP BY Station, Measurement, longitude, latitude
+        ORDER BY Station ASC
+        """
+        groupbystation70s = sqlContext.sql(Query)
+        sqlContext.registerDataFrameAsTable(groupbystation70s, "meas70s")
+        ###
+        
+        # 00s
+        
+        ###
+        Query = f"""
+        SELECT Station, Measurement, Values, longitude, latitude, Year
+        FROM table_{s}
+        WHERE Measurement=={featureStr} and (Year >= 2000 and Year < 2010)
+        """
+        query00s = sqlContext.sql(Query)
+        rdd00s = query00s.rdd.map(lambda x: remove0sAndAverage(x, 'Values'))
+        dfs00 = sqlContext.createDataFrame(rdd00s)
+        sqlContext.registerDataFrameAsTable(dfs00, f'table_{s}_00s')
+        
+        ###
+        Query = f"""
+        SELECT Station, COUNT(Measurement) as NumMeas00s, MEAN(Values) as AvgVal00s, longitude, latitude
+        FROM table_{s}_00s
+        GROUP BY Station, Measurement, longitude, latitude
+        ORDER BY Station ASC
+        """
+        groupbystation00s = sqlContext.sql(Query)
+        sqlContext.registerDataFrameAsTable(groupbystation00s, "meas00s")
+        ###
+        
+        ### Combined
+        
+        ###
+        Query = f"""
+        SELECT meas70s.Station, meas70s.longitude, meas70s.latitude, AvgVal70s, AvgVal00s, NumMeas70s, NumMeas00s
+        FROM meas70s
+        INNER JOIN meas00s on meas70s.Station = meas00s.Station
+        ORDER BY Station ASC
+        """
+        combined = sqlContext.sql(Query)
+        rddcombined = combined.rdd.map(lambda x: computeDelta(x, 'AvgVal70s', 'AvgVal00s'))
+        deltaDFs.append(sqlContext.createDataFrame(rddcombined))
+        print(f"Done adding {s}")
+    
+    return(deltaDFs)
+    
+def computeDelta(x, key70s, key00s):
+    d = x.asDict()
+    if (key70s in d) and (key00s in d):
+        delta = d[key00s] - d[key70s]
+        d['Values'] = delta
+        d['NumMeas'] = d['NumMeas70s']+d['NumMeas00s']
+    d.pop('NumMeas70s')
+    d.pop('NumMeas00s')
+    d.pop(key70s)
+    d.pop(key00s)
+    return(d)
 
 def replaceSNWD(x, key):
     d = x.asDict()
@@ -121,6 +345,16 @@ def replaceSNWD(x, key):
         odd_indices = list(x.Values)[1::2]
         winter_odd_indices = odd_indices[:90]
         d[key] = float(mean(winter_odd_indices))
+    return(d)
+
+def remove0sAndAverage(x, key):
+    d = x.asDict()
+    if key in d:
+        vals = list(x.Values)
+        vals = [v for v in vals if v > 0]
+        if len(vals)==0:
+            vals = [0]
+        d[key] = float(mean(vals))
     return(d)
 
 def getStateData(state, data_dir, tarname, parquet):
