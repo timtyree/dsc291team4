@@ -272,7 +272,7 @@ def decadeMeasurementDelta(featureStr, states, data_dir, sqlContext):
         WHERE Measurement=={featureStr} and (Year >= 1970 and Year < 1980)
         """
         query70s = sqlContext.sql(Query)
-        rdd70s = query70s.rdd.map(lambda x: remove0sAndAverage(x, 'Values'))
+        rdd70s = query70s.rdd.map(lambda x: replaceSNWD(x, 'Values'))
         dfs70 = sqlContext.createDataFrame(rdd70s)
         sqlContext.registerDataFrameAsTable(dfs70, f'table_{s}_70s')
         
@@ -296,7 +296,7 @@ def decadeMeasurementDelta(featureStr, states, data_dir, sqlContext):
         WHERE Measurement=={featureStr} and (Year >= 2000 and Year < 2010)
         """
         query00s = sqlContext.sql(Query)
-        rdd00s = query00s.rdd.map(lambda x: remove0sAndAverage(x, 'Values'))
+        rdd00s = query00s.rdd.map(lambda x: replaceSNWD(x, 'Values'))
         dfs00 = sqlContext.createDataFrame(rdd00s)
         sqlContext.registerDataFrameAsTable(dfs00, f'table_{s}_00s')
         
