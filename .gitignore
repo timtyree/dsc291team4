@@ -7,3 +7,6 @@ HW3/Data/north_plains_snow_means_data.csv
 *-checkpoint.ipynb
 HW3/.ipynb_checkpoints/HW3_Preliminary-checkpoint.ipynb
 HW3/.ipynb_checkpoints/HW3_Preliminary-checkpoint.ipynb
+*.parquet
+*.tgz
+HW3/Data/STAT_IA.pickle
