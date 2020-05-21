@@ -1,0 +1,325 @@
+[NotebookApp | WARNING] No nbgrader_config.py file found (rerun with --debug to see where nbgrader is looking)
+[NotebookApp | INFO] Loading the validate_assignment nbgrader serverextension
+[NotebookApp | INFO] Serving notebooks from local directory: /home/jovyan/work/dsc291team4/HW3
+[NotebookApp | INFO] 0 active kernels
+[NotebookApp | INFO] The Jupyter Notebook is running at:
+[NotebookApp | INFO] http://[all ip addresses on your system]:8888/
+[NotebookApp | INFO] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[NotebookApp | INFO] 302 GET / (172.17.0.1) 1.24ms
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Kernel started: f76c474c-0792-4625-9237-168cda2092b4
+[NotebookApp | WARNING] 404 GET /static/components/bootstrap/js/tooltip.js?v=20200520034505 (172.17.0.1) 21.86ms referer=http://localhost:8888/notebooks/PlainsWeatherStationLocations.ipynb
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel f76c474c-0792-4625-9237-168cda2092b4
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] New terminal with automatic name: 1
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | WARNING] 400 GET /api/contents/SNWD-All-States.xlsx?type=file&format=text&_=1589949560435 (172.17.0.1): /home/jovyan/work/dsc291team4/HW3/SNWD-All-States.xlsx is not UTF-8 encoded
+[NotebookApp | WARNING] /home/jovyan/work/dsc291team4/HW3/SNWD-All-States.xlsx is not UTF-8 encoded
+[NotebookApp | WARNING] 400 GET /api/contents/SNWD-All-States.xlsx?type=file&format=text&_=1589949560435 (172.17.0.1) 3.99ms referer=http://localhost:8888/edit/SNWD-All-States.xlsx
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Starting buffering for f76c474c-0792-4625-9237-168cda2092b4:b3a8ae7e15834fc796bba742ab0a74db
+[NotebookApp | INFO] Kernel restarted: f76c474c-0792-4625-9237-168cda2092b4
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel f76c474c-0792-4625-9237-168cda2092b4
+[NotebookApp | INFO] Restoring connection for f76c474c-0792-4625-9237-168cda2092b4:b3a8ae7e15834fc796bba742ab0a74db
+[NotebookApp | INFO] Replaying 6 buffered messages
+[NotebookApp | INFO] Starting buffering for f76c474c-0792-4625-9237-168cda2092b4:b3a8ae7e15834fc796bba742ab0a74db
+[NotebookApp | INFO] Kernel started: f4b67d2d-bb0a-4af4-9bf9-41621e310abe
+[NotebookApp | WARNING] 404 GET /static/components/bootstrap/js/tooltip.js?v=20200520034505 (172.17.0.1) 9.82ms referer=http://localhost:8888/notebooks/PlainsWeatherComparison%20-%2070s%20vs%2000s.ipynb
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel f4b67d2d-bb0a-4af4-9bf9-41621e310abe
+[NotebookApp | INFO] Creating new notebook in 
+[NotebookApp | INFO] Kernel started: 14cbce1f-0b68-46aa-bc8a-af68f5f5b06b
+[NotebookApp | WARNING] 404 GET /static/components/bootstrap/js/tooltip.js?v=20200520034505 (172.17.0.1) 2.33ms referer=http://localhost:8888/notebooks/Untitled.ipynb?kernel_name=python3
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel 14cbce1f-0b68-46aa-bc8a-af68f5f5b06b
+[NotebookApp | INFO] Saving file at /PlainsWeatherComparison - 70s vs 00s.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Starting buffering for 14cbce1f-0b68-46aa-bc8a-af68f5f5b06b:6544342836a54c748f7d2eefb3fb1f5c
+[NotebookApp | INFO] Kernel restarted: 14cbce1f-0b68-46aa-bc8a-af68f5f5b06b
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel 14cbce1f-0b68-46aa-bc8a-af68f5f5b06b
+[NotebookApp | INFO] Restoring connection for 14cbce1f-0b68-46aa-bc8a-af68f5f5b06b:6544342836a54c748f7d2eefb3fb1f5c
+[NotebookApp | INFO] Replaying 5 buffered messages
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /PlainsWeatherComparison - 70s vs 00s.ipynb
+[NotebookApp | INFO] Starting buffering for 14cbce1f-0b68-46aa-bc8a-af68f5f5b06b:6544342836a54c748f7d2eefb3fb1f5c
+[NotebookApp | INFO] Starting buffering for f4b67d2d-bb0a-4af4-9bf9-41621e310abe:4a1d15d858164711909f843a4db77e8d
+[NotebookApp | INFO] interrupted
+[NotebookApp | CRITICAL] Shutdown confirmed
+[NotebookApp | INFO] Shutting down 3 kernels
+[NotebookApp | INFO] Kernel shutdown: f76c474c-0792-4625-9237-168cda2092b4
+[NotebookApp | INFO] Kernel shutdown: f4b67d2d-bb0a-4af4-9bf9-41621e310abe
+[NotebookApp | INFO] Kernel shutdown: 14cbce1f-0b68-46aa-bc8a-af68f5f5b06b
+[NotebookApp | WARNING] No nbgrader_config.py file found (rerun with --debug to see where nbgrader is looking)
+[NotebookApp | INFO] Loading the validate_assignment nbgrader serverextension
+[NotebookApp | INFO] Serving notebooks from local directory: /home/jovyan/work/dsc291team4/HW3
+[NotebookApp | INFO] 0 active kernels
+[NotebookApp | INFO] The Jupyter Notebook is running at:
+[NotebookApp | INFO] http://[all ip addresses on your system]:8888/
+[NotebookApp | INFO] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[NotebookApp | INFO] interrupted
+[NotebookApp | CRITICAL] Shutdown confirmed
+[NotebookApp | INFO] Shutting down 0 kernels
+[NotebookApp | WARNING] No nbgrader_config.py file found (rerun with --debug to see where nbgrader is looking)
+[NotebookApp | INFO] Loading the validate_assignment nbgrader serverextension
+[NotebookApp | INFO] Serving notebooks from local directory: /home/jovyan/work/dsc291team4/HW3
+[NotebookApp | INFO] 0 active kernels
+[NotebookApp | INFO] The Jupyter Notebook is running at:
+[NotebookApp | INFO] http://[all ip addresses on your system]:8888/
+[NotebookApp | INFO] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[NotebookApp | INFO] 302 GET / (172.17.0.1) 0.81ms
+[NotebookApp | INFO] Kernel started: b48cc46c-02ab-428c-ab13-0fdc5fe6eed0
+[NotebookApp | WARNING] 404 GET /static/components/bootstrap/js/tooltip.js?v=20200520154826 (172.17.0.1) 28.72ms referer=http://localhost:8888/notebooks/Eigenvector%20x%20iPyleaflet.ipynb
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel b48cc46c-02ab-428c-ab13-0fdc5fe6eed0
+[NotebookApp | INFO] Kernel started: e01efacf-ce35-4075-9d3e-afb64eb1cad7
+[NotebookApp | WARNING] 404 GET /static/components/bootstrap/js/tooltip.js?v=20200520154826 (172.17.0.1) 3.37ms referer=http://localhost:8888/notebooks/PlainsWeatherComparison%20-%2070s%20vs%2000s.ipynb
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel e01efacf-ce35-4075-9d3e-afb64eb1cad7
+[NotebookApp | INFO] Starting buffering for e01efacf-ce35-4075-9d3e-afb64eb1cad7:b6d0d262ab5945d49472872b2f72438c
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Kernel started: 4d863a48-a30c-4259-856b-eb4b6e65aa68
+[NotebookApp | WARNING] 404 GET /static/components/bootstrap/js/tooltip.js?v=20200520154826 (172.17.0.1) 5.19ms referer=http://localhost:8888/notebooks/PlainsWeatherStationLocations.ipynb
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel 4d863a48-a30c-4259-856b-eb4b6e65aa68
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /lib/utils.py
+[NotebookApp | INFO] Saving file at /lib/utils.py
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Starting buffering for b48cc46c-02ab-428c-ab13-0fdc5fe6eed0:f467b08e76314f19a9718d9aa6ce3fc5
+[NotebookApp | INFO] Kernel restarted: b48cc46c-02ab-428c-ab13-0fdc5fe6eed0
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel b48cc46c-02ab-428c-ab13-0fdc5fe6eed0
+[NotebookApp | INFO] Restoring connection for b48cc46c-02ab-428c-ab13-0fdc5fe6eed0:f467b08e76314f19a9718d9aa6ce3fc5
+[NotebookApp | INFO] Replaying 6 buffered messages
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Starting buffering for b48cc46c-02ab-428c-ab13-0fdc5fe6eed0:f467b08e76314f19a9718d9aa6ce3fc5
+[NotebookApp | INFO] Kernel restarted: b48cc46c-02ab-428c-ab13-0fdc5fe6eed0
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel b48cc46c-02ab-428c-ab13-0fdc5fe6eed0
+[NotebookApp | INFO] Restoring connection for b48cc46c-02ab-428c-ab13-0fdc5fe6eed0:f467b08e76314f19a9718d9aa6ce3fc5
+[NotebookApp | INFO] Replaying 3 buffered messages
+[NotebookApp | INFO] Saving file at /lib/utils.py
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /lib/utils.py
+[NotebookApp | INFO] Starting buffering for b48cc46c-02ab-428c-ab13-0fdc5fe6eed0:f467b08e76314f19a9718d9aa6ce3fc5
+[NotebookApp | INFO] Kernel restarted: b48cc46c-02ab-428c-ab13-0fdc5fe6eed0
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel b48cc46c-02ab-428c-ab13-0fdc5fe6eed0
+[NotebookApp | INFO] Restoring connection for b48cc46c-02ab-428c-ab13-0fdc5fe6eed0:f467b08e76314f19a9718d9aa6ce3fc5
+[NotebookApp | INFO] Replaying 3 buffered messages
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /lib/utils.py
+[NotebookApp | INFO] Starting buffering for b48cc46c-02ab-428c-ab13-0fdc5fe6eed0:f467b08e76314f19a9718d9aa6ce3fc5
+[NotebookApp | INFO] Kernel restarted: b48cc46c-02ab-428c-ab13-0fdc5fe6eed0
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel b48cc46c-02ab-428c-ab13-0fdc5fe6eed0
+[NotebookApp | INFO] Restoring connection for b48cc46c-02ab-428c-ab13-0fdc5fe6eed0:f467b08e76314f19a9718d9aa6ce3fc5
+[NotebookApp | INFO] Replaying 3 buffered messages
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /lib/utils.py
+[NotebookApp | INFO] Starting buffering for b48cc46c-02ab-428c-ab13-0fdc5fe6eed0:f467b08e76314f19a9718d9aa6ce3fc5
+[NotebookApp | INFO] Kernel restarted: b48cc46c-02ab-428c-ab13-0fdc5fe6eed0
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel b48cc46c-02ab-428c-ab13-0fdc5fe6eed0
+[NotebookApp | INFO] Restoring connection for b48cc46c-02ab-428c-ab13-0fdc5fe6eed0:f467b08e76314f19a9718d9aa6ce3fc5
+[NotebookApp | INFO] Replaying 6 buffered messages
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /lib/utils.py
+[NotebookApp | INFO] Starting buffering for b48cc46c-02ab-428c-ab13-0fdc5fe6eed0:f467b08e76314f19a9718d9aa6ce3fc5
+[NotebookApp | INFO] Kernel restarted: b48cc46c-02ab-428c-ab13-0fdc5fe6eed0
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel b48cc46c-02ab-428c-ab13-0fdc5fe6eed0
+[NotebookApp | INFO] Restoring connection for b48cc46c-02ab-428c-ab13-0fdc5fe6eed0:f467b08e76314f19a9718d9aa6ce3fc5
+[NotebookApp | INFO] Replaying 3 buffered messages
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Starting buffering for b48cc46c-02ab-428c-ab13-0fdc5fe6eed0:f467b08e76314f19a9718d9aa6ce3fc5
+[NotebookApp | INFO] Kernel restarted: b48cc46c-02ab-428c-ab13-0fdc5fe6eed0
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel b48cc46c-02ab-428c-ab13-0fdc5fe6eed0
+[NotebookApp | INFO] Restoring connection for b48cc46c-02ab-428c-ab13-0fdc5fe6eed0:f467b08e76314f19a9718d9aa6ce3fc5
+[NotebookApp | INFO] Replaying 6 buffered messages
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel e01efacf-ce35-4075-9d3e-afb64eb1cad7
+[NotebookApp | INFO] Discarding 22 buffered messages for e01efacf-ce35-4075-9d3e-afb64eb1cad7:b6d0d262ab5945d49472872b2f72438c
+[NotebookApp | WARNING] 404 GET /static/components/bootstrap/js/tooltip.js?v=20200520154826 (172.17.0.1) 3.39ms referer=http://localhost:8888/notebooks/PlainsWeatherComparison%20-%2070s%20vs%2000s.ipynb
+[NotebookApp | INFO] Saving file at /PlainsWeatherComparison - 70s vs 00s.ipynb
+[NotebookApp | INFO] Saving file at /PlainsWeatherComparison - 70s vs 00s.ipynb
+[NotebookApp | INFO] Saving file at /PlainsWeatherComparison - 70s vs 00s.ipynb
+[NotebookApp | INFO] Creating new notebook in 
+[NotebookApp | INFO] Kernel started: af838e52-321d-4db2-8f34-d80ea024d38a
+[NotebookApp | WARNING] 404 GET /static/components/bootstrap/js/tooltip.js?v=20200520154826 (172.17.0.1) 9.10ms referer=http://localhost:8888/notebooks/Untitled.ipynb?kernel_name=python3
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel af838e52-321d-4db2-8f34-d80ea024d38a
+[NotebookApp | INFO] Starting buffering for af838e52-321d-4db2-8f34-d80ea024d38a:6ad79452857f4dcbb326b0c4fb570e6c
+[NotebookApp | INFO] Kernel shutdown: af838e52-321d-4db2-8f34-d80ea024d38a
+[NotebookApp | WARNING] delete /Untitled.ipynb
+[NotebookApp | INFO] Copying PlainsWeatherStationLocations.ipynb to 
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations.ipynb is not trusted
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations-Copy1.ipynb is not trusted
+[NotebookApp | WARNING] Notebook PlainsWeatherStationLocations-Copy1.ipynb is not trusted
+[NotebookApp | INFO] Kernel started: 6f055b61-bb0c-45d8-adfa-f97518624ccd
+[NotebookApp | WARNING] 404 GET /static/components/bootstrap/js/tooltip.js?v=20200520154826 (172.17.0.1) 2.35ms referer=http://localhost:8888/notebooks/PlainsWeatherStationLocations-Copy1.ipynb
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel 6f055b61-bb0c-45d8-adfa-f97518624ccd
+[NotebookApp | INFO] Starting buffering for e01efacf-ce35-4075-9d3e-afb64eb1cad7:677a00a0a89f4bc587da39d77af322c3
+[NotebookApp | INFO] Kernel restarted: e01efacf-ce35-4075-9d3e-afb64eb1cad7
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel e01efacf-ce35-4075-9d3e-afb64eb1cad7
+[NotebookApp | INFO] Restoring connection for e01efacf-ce35-4075-9d3e-afb64eb1cad7:677a00a0a89f4bc587da39d77af322c3
+[NotebookApp | INFO] Replaying 6 buffered messages
+[NotebookApp | INFO] Saving file at /PlainsWeatherComparison - 70s vs 00s.ipynb
+[NotebookApp | INFO] Starting buffering for e01efacf-ce35-4075-9d3e-afb64eb1cad7:677a00a0a89f4bc587da39d77af322c3
+[NotebookApp | INFO] Starting buffering for 4d863a48-a30c-4259-856b-eb4b6e65aa68:9a276bda9dca41ca800e1a5c0efc6b08
+[NotebookApp | INFO] Kernel restarted: 4d863a48-a30c-4259-856b-eb4b6e65aa68
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel 4d863a48-a30c-4259-856b-eb4b6e65aa68
+[NotebookApp | INFO] Restoring connection for 4d863a48-a30c-4259-856b-eb4b6e65aa68:9a276bda9dca41ca800e1a5c0efc6b08
+[NotebookApp | INFO] Replaying 5 buffered messages
+[NotebookApp | INFO] Saving file at /PlainsWeatherStationLocations.ipynb
+[NotebookApp | INFO] Starting buffering for 4d863a48-a30c-4259-856b-eb4b6e65aa68:9a276bda9dca41ca800e1a5c0efc6b08
+[NotebookApp | INFO] Starting buffering for b48cc46c-02ab-428c-ab13-0fdc5fe6eed0:f467b08e76314f19a9718d9aa6ce3fc5
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | WARNING] Notebook ColorDataByState.ipynb is not trusted
+[NotebookApp | INFO] Starting buffering for 6f055b61-bb0c-45d8-adfa-f97518624ccd:5b93ab182adc4006b7d11fec466629fc
+[NotebookApp | INFO] Kernel shutdown: 6f055b61-bb0c-45d8-adfa-f97518624ccd
+[NotebookApp | WARNING] delete /ColorDataByState.ipynb
+[NotebookApp | INFO] Copying PlainsWeatherComparison - 70s vs 00s.ipynb to 
+[NotebookApp | INFO] Kernel started: 6649a9be-8ef3-4fbe-b82a-84ef5115315e
+[NotebookApp | WARNING] 404 GET /static/components/bootstrap/js/tooltip.js?v=20200520154826 (172.17.0.1) 3.26ms referer=http://localhost:8888/notebooks/PlainsWeatherComparison%20-%2070s%20vs%2000s-Copy1.ipynb
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel 6649a9be-8ef3-4fbe-b82a-84ef5115315e
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel b48cc46c-02ab-428c-ab13-0fdc5fe6eed0
+[NotebookApp | WARNING] 404 GET /static/components/bootstrap/js/tooltip.js?v=20200520154826 (172.17.0.1) 5.88ms referer=http://localhost:8888/notebooks/Eigenvector%20x%20iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /Eigenvector x iPyleaflet.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /lib/utils.py
+[NotebookApp | INFO] Starting buffering for 6649a9be-8ef3-4fbe-b82a-84ef5115315e:493d48158c4c410bb1a58a1f1c6a586c
+[NotebookApp | INFO] Kernel restarted: 6649a9be-8ef3-4fbe-b82a-84ef5115315e
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel 6649a9be-8ef3-4fbe-b82a-84ef5115315e
+[NotebookApp | INFO] Restoring connection for 6649a9be-8ef3-4fbe-b82a-84ef5115315e:493d48158c4c410bb1a58a1f1c6a586c
+[NotebookApp | INFO] Replaying 6 buffered messages
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] New terminal with automatic name: 1
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Starting buffering for 6649a9be-8ef3-4fbe-b82a-84ef5115315e:493d48158c4c410bb1a58a1f1c6a586c
+[NotebookApp | INFO] Kernel restarted: 6649a9be-8ef3-4fbe-b82a-84ef5115315e
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel 6649a9be-8ef3-4fbe-b82a-84ef5115315e
+[NotebookApp | INFO] Restoring connection for 6649a9be-8ef3-4fbe-b82a-84ef5115315e:493d48158c4c410bb1a58a1f1c6a586c
+[NotebookApp | INFO] Replaying 6 buffered messages
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Starting buffering for 6649a9be-8ef3-4fbe-b82a-84ef5115315e:493d48158c4c410bb1a58a1f1c6a586c
+[NotebookApp | INFO] Kernel restarted: 6649a9be-8ef3-4fbe-b82a-84ef5115315e
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel 6649a9be-8ef3-4fbe-b82a-84ef5115315e
+[NotebookApp | INFO] Restoring connection for 6649a9be-8ef3-4fbe-b82a-84ef5115315e:493d48158c4c410bb1a58a1f1c6a586c
+[NotebookApp | INFO] Replaying 6 buffered messages
+[NotebookApp | INFO] Starting buffering for b48cc46c-02ab-428c-ab13-0fdc5fe6eed0:80188899a6224bb99105fa1e9cb8d4d9
+[NotebookApp | INFO] Saving file at /ColorDataByState.ipynb
+[NotebookApp | INFO] Starting buffering for 6649a9be-8ef3-4fbe-b82a-84ef5115315e:493d48158c4c410bb1a58a1f1c6a586c
+[NotebookApp | INFO] interrupted
+[NotebookApp | CRITICAL] Shutdown confirmed
+[NotebookApp | INFO] Shutting down 4 kernels
+[NotebookApp | INFO] Kernel shutdown: b48cc46c-02ab-428c-ab13-0fdc5fe6eed0
+[NotebookApp | INFO] Kernel shutdown: e01efacf-ce35-4075-9d3e-afb64eb1cad7
+[NotebookApp | INFO] Kernel shutdown: 4d863a48-a30c-4259-856b-eb4b6e65aa68
+[NotebookApp | INFO] Kernel shutdown: 6649a9be-8ef3-4fbe-b82a-84ef5115315e

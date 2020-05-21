@@ -117,6 +117,101 @@ class leaflet_old:
         x = (val - self.minAggVal)/(self.maxAggVal - self.minAggVal)
         return(rgb2hex(self.cmap(x)[:3]))
 
+class leaflet_eig:
+    """
+    Plots circles on a map (one per station) whose size is proportional to the number of feature measurements, and whose color is equal to their aggregated value (min, max, avg)  
+    
+    :param featureStr: the feature you'd like to visualize given as a string, eg. 'SNWD'
+    :param aggregateType: 'avg', 'min', 'max'
+    """
+    
+    def __init__(self, sqlctxt, featureStr):
+        self.feat = featureStr
+        self.pdfMaster = None
+        self.sqlctxt = sqlctxt
+        
+        self.maxLong = None
+        self.minLong = None
+        self.maxLat = None
+        self.minLat = None
+        
+        self.minAggVal = None
+        self.maxAggVal = None
+        
+        
+        self.cmap = plt.get_cmap('jet_r')
+        self.m = None
+        
+    def add(self, dataframe):
+        """
+        Adds (or concatenates) a dataframe to the instance's master dataframe. The dataframe to be added must have atleast
+        the following columns: station, latitude, longitude, featureStr, value
+        """
+        
+        self.sqlctxt.registerDataFrameAsTable(dataframe, "temp")
+        query = f"""
+        SELECT Station, latitude, longitude, COUNT(Year) NumMeas, MEAN(Values)
+        FROM temp
+        GROUP BY Station, latitude, longitude
+        """
+        tempdf = self.sqlctxt.sql(query).toPandas()
+        
+        if (self.pdfMaster is None):
+            # set as new pdfMaster
+            self.pdfMaster = tempdf
+            
+        else:            
+            # append to existing dfMaster
+            self.pdfMaster = pd.concat([self.pdfMaster, tempdf])
+            
+    def plot_all(self):
+        # update internals
+        self.maxLong = self.pdfMaster['longitude'].max()
+        self.minLong = self.pdfMaster['longitude'].min()
+        self.maxLat = self.pdfMaster['latitude'].max()
+        self.minLat = self.pdfMaster['latitude'].min()
+        self.minAggVal = self.pdfMaster['avg(Values)'].min()
+        self.maxAggVal = self.pdfMaster['avg(Values)'].max()
+        
+        # update center of map
+        self.center = [(self.minLat + self.maxLat)/2, (self.minLong + self.maxLong)/2]
+        self.zoom = 6
+        self.m = Map(default_tiles=TileLayer(opacity=1.0), center=self.center, zoom=self.zoom)
+        
+        # loop over all the points in given dataframe, adding them to self.map
+        circles = []
+        for index,row in self.pdfMaster.iterrows():
+            _lat=row['latitude']
+            _long=row['longitude']
+            _count=row['NumMeas']
+            _coef=row['avg(Values)']
+#             pdb.set_trace()
+            # taking sqrt of count so that the  area of the circle corresponds to the count
+            c = Circle(location=(_lat,_long), radius=int(2000*np.sqrt(_count+0.0)), weight=1,
+                    color='#AAA', opacity=0.8, fill_opacity=0.4,
+                    fill_color=self.get_color(_coef))
+            circles.append(c)
+            self.m.add_layer(c)
+        self.m.add_control(FullScreenControl())
+        
+    
+    def color_legend(self):
+        self.cfig = figure(figsize=[10,1])
+        ax = plt.subplot(111)
+#         vals = self.cmap(np.arange(0,1,.005))[:,:3]
+        vals = self.cmap(np.arange(0,1,.005))[:,:3]
+        vals3 = np.stack([vals]*10)
+        vals3.shape
+        ax.imshow(vals3)
+        midpoint = 200. * -self.minAggVal/(self.maxAggVal - self.minAggVal)
+        xticks((0,midpoint,200),["%4.1f"%v for v in (self.minAggVal,0.,self.maxAggVal)])
+        yticks(());
+
+    def get_color(self, val):
+        x = (val - self.minAggVal)/(self.maxAggVal - self.minAggVal)
+        return(rgb2hex(self.cmap(x)[:3]))
+     
+    
 class leaflet:
     """
     Plots circles on a map (one per station) whose size is proportional to the number of feature measurements, and whose color is equal to their aggregated value (min, max, avg)  
@@ -316,6 +411,80 @@ def decadeMeasurementDelta(featureStr, states, data_dir, sqlContext):
         ###
         Query = f"""
         SELECT meas70s.Station, meas70s.longitude, meas70s.latitude, AvgVal70s, AvgVal00s, NumMeas70s, NumMeas00s
+        FROM meas70s
+        INNER JOIN meas00s on meas70s.Station = meas00s.Station
+        ORDER BY Station ASC
+        """
+        combined = sqlContext.sql(Query)
+        rddcombined = combined.rdd.map(lambda x: computeDelta(x, 'AvgVal70s', 'AvgVal00s'))
+        deltaDFs.append(sqlContext.createDataFrame(rddcombined))
+        print(f"Done adding {s}")
+    
+    return(deltaDFs)
+
+
+def decadeMeasurementDelta_states(featureStr, states, data_dir, sqlContext):
+    deltaDFs = []
+    # create the sparksql context
+    for s in states:
+        parquet = s + '.parquet'
+        parquet_path = data_dir + '/' + parquet
+        df = sqlContext.read.parquet(parquet_path)
+        sqlContext.registerDataFrameAsTable(df,f'table_{s}')
+        
+        # 70s
+        
+        ###
+        Query = f"""
+        SELECT state, Station, Measurement, Values, longitude, latitude, Year
+        FROM table_{s}
+        WHERE Measurement=={featureStr} and (Year >= 1970 and Year < 1980)
+        """
+        query70s = sqlContext.sql(Query)
+        rdd70s = query70s.rdd.map(lambda x: replaceSNWD(x, 'Values'))
+        dfs70 = sqlContext.createDataFrame(rdd70s)
+        sqlContext.registerDataFrameAsTable(dfs70, f'table_{s}_70s')
+        
+        ###
+        Query = f"""
+        SELECT state, Station, COUNT(Measurement) as NumMeas70s, MEAN(Values) as AvgVal70s, longitude, latitude
+        FROM table_{s}_70s
+        GROUP BY state, Station, Measurement, longitude, latitude
+        ORDER BY Station ASC
+        """
+        groupbystation70s = sqlContext.sql(Query)
+        sqlContext.registerDataFrameAsTable(groupbystation70s, "meas70s")
+        ###
+        
+        # 00s
+        
+        ###
+        Query = f"""
+        SELECT state, Station, Measurement, Values, longitude, latitude, Year
+        FROM table_{s}
+        WHERE Measurement=={featureStr} and (Year >= 2000 and Year < 2010)
+        """
+        query00s = sqlContext.sql(Query)
+        rdd00s = query00s.rdd.map(lambda x: replaceSNWD(x, 'Values'))
+        dfs00 = sqlContext.createDataFrame(rdd00s)
+        sqlContext.registerDataFrameAsTable(dfs00, f'table_{s}_00s')
+        
+        ###
+        Query = f"""
+        SELECT state, Station, COUNT(Measurement) as NumMeas00s, MEAN(Values) as AvgVal00s, longitude, latitude
+        FROM table_{s}_00s
+        GROUP BY state, Station, Measurement, longitude, latitude
+        ORDER BY Station ASC
+        """
+        groupbystation00s = sqlContext.sql(Query)
+        sqlContext.registerDataFrameAsTable(groupbystation00s, "meas00s")
+        ###
+        
+        ### Combined
+        
+        ###
+        Query = f"""
+        SELECT meas70s.state, meas70s.Station, meas70s.longitude, meas70s.latitude, AvgVal70s, AvgVal00s, NumMeas70s, NumMeas00s
         FROM meas70s
         INNER JOIN meas00s on meas70s.Station = meas00s.Station
         ORDER BY Station ASC
